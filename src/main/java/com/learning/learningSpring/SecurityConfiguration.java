@@ -27,8 +27,13 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+
+            .csrf(csrf -> csrf.disable())
+
+            .cors(cors -> cors.disable())
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/api/post/{id}").permitAll()
+                        .requestMatchers("api/register","/api/post/{id}","/api/{id}/comment","/api/post/{postId}/comments","api/getUsers","api/addComment")
+                        .permitAll()
                         .anyRequest().authenticated())
                 .logout(withDefaults())
                 .formLogin(withDefaults());

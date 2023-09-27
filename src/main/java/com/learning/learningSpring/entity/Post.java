@@ -1,11 +1,8 @@
 package com.learning.learningSpring.entity;
 
 import java.util.Date;
-import java.util.HashSet;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.hibernate.mapping.Set;
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.CascadeType;
@@ -15,8 +12,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
